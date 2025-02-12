@@ -3,7 +3,6 @@ spawn /usr/local/bin/yanglint
 > load  iana-if-type
 > load  ietf-interfaces
 > data -t config -f xml m-alt.json
-libyang[0]: When condition "derived-from-or-self(if:type,'ianaift:ieee8023adLag')" not satisfied. (data path: /ietf-interfaces:interfaces/interface[name='lag-uc2-both']/ident-alt:bridge-port-uc1)
-libyang[0]: When condition "derived-from-or-self(if:type,'ianaift:ieee8023adLag')" not satisfied. (data path: /ietf-interfaces:interfaces/interface[name='lag-uc1-both']/ident-alt:bridge-port-uc1)
+libyang[0]: When condition "derived-from-or-self(if:type,'ianaift:ieee8023adLag')" not satisfied. (data path: /ietf-interfaces:interfaces/interface[name='lag-uc2']/ident-alt:bridge-port)
 YANGLINT[E]: Failed to parse input data file "m-alt.json".
 > quit

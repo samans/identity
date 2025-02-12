@@ -53,7 +53,6 @@ module ident-alt {
     }
   }
 
-/* Use Case 1 */
   augment "/if:interfaces/if:interface" {
     when
       "derived-from-or-self(if:type,'ianaift:ieee8023adLag')" {
@@ -62,37 +61,15 @@ module ident-alt {
     }
     description
       "Augment the interface model with the Bridge Port";
-    container bridge-port-uc1 {
+    container bridge-port {
       description
         "Bridge Port is an extension of the IETF Interfaces model (RFC7223).";
 
-      leaf bridge-name-uc1 {
+      leaf bridge-name {
         type leafref {
           path '/bridges/bridge/name';
         }
       } 
     }
   }
-
-/* Use Case 2 */
-  augment "/if:interfaces/if:interface" {
-    when
-      "derived-from-or-self(if:type,'ident-alt:ieee8021axLag')" {
-      description
-        "Applies when a Bridge interface.";
-    }
-    description
-      "Augment the interface model with the Bridge Port";
-    container bridge-port-uc2 {
-      description
-        "Bridge Port is an extension of the IETF Interfaces model (RFC7223).";
-
-      leaf bridge-name-uc2 {
-        type leafref {
-          path '/bridges/bridge/name';
-        }
-      } 
-    }
-  }
-
 }
