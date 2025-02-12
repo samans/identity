@@ -1,0 +1,48 @@
+spawn /usr/local/bin/yanglint
+> load  ident
+> load  iana-if-type
+> load  ietf-interfaces
+> data -t config -f xml m.json
+<bridges xmlns="urn:example:ident">
+  <bridge>
+    <name>bridge1</name>
+  </bridge>
+</bridges>
+<interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+  <interface>
+    <name>lag-uc1</name>
+    <type xmlns:ianaift="urn:ietf:params:xml:ns:yang:iana-if-type">ianaift:ieee8023adLag</type>
+    <bridge-port-uc1 xmlns="urn:example:ident">
+      <bridge-name-uc1>bridge1</bridge-name-uc1>
+    </bridge-port-uc1>
+  </interface>
+  <interface>
+    <name>lag-uc1-both</name>
+quit
+    <type xmlns:ident="urn:example:ident">ident:ieee8021axLag</type>
+    <bridge-port-uc1 xmlns="urn:example:ident">
+      <bridge-name-uc1>bridge1</bridge-name-uc1>
+    </bridge-port-uc1>
+    <bridge-port-uc2 xmlns="urn:example:ident">
+      <bridge-name-uc2>bridge1</bridge-name-uc2>
+    </bridge-port-uc2>
+  </interface>
+  <interface>
+    <name>lag-uc2</name>
+    <type xmlns:ident="urn:example:ident">ident:ieee8021axLag</type>
+    <bridge-port-uc2 xmlns="urn:example:ident">
+      <bridge-name-uc2>bridge1</bridge-name-uc2>
+    </bridge-port-uc2>
+  </interface>
+  <interface>
+    <name>lag-uc2-both</name>
+    <type xmlns:ident="urn:example:ident">ident:ieee8021axLag</type>
+    <bridge-port-uc1 xmlns="urn:example:ident">
+      <bridge-name-uc1>bridge1</bridge-name-uc1>
+    </bridge-port-uc1>
+    <bridge-port-uc2 xmlns="urn:example:ident">
+      <bridge-name-uc2>bridge1</bridge-name-uc2>
+    </bridge-port-uc2>
+  </interface>
+</interfaces>
+> 

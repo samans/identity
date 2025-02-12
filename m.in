@@ -1,0 +1,14 @@
+#! /usr/local/bin/expect -f
+#set timeout -1
+spawn /usr/local/bin/yanglint
+expect ">"
+send "load  ident\r"
+expect ">"
+send "load  iana-if-type\r"
+expect ">"
+send "load  ietf-interfaces\r"
+expect ">"
+send "data -t config -f xml m.json\r"
+expect ">"
+send "quit\r"
+expect eof

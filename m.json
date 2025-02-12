@@ -1,0 +1,53 @@
+{
+  "ident:bridges": {
+    "bridge": [
+      {
+        "name": "bridge1"
+      }
+    ]
+  },
+  "ietf-interfaces:interfaces": {
+    "interface": [
+      {
+        "name": "lag-uc1",
+        "type": "iana-if-type:ieee8023adLag",
+        "ident:bridge-port-uc1":
+         {
+             "ident:bridge-name-uc1": "bridge1"
+         }
+      },
+      {
+        "name": "lag-uc2",
+        "type": "ident:ieee8021axLag",
+        "ident:bridge-port-uc2":
+         {
+             "ident:bridge-name-uc2": "bridge1"
+         }
+      },
+      {
+        "name": "lag-uc1-both",
+        "type": "ident:ieee8021axLag",
+        "ident:bridge-port-uc1":
+         {
+             "ident:bridge-name-uc1": "bridge1"
+         },
+        "ident:bridge-port-uc2":
+         {
+             "ident:bridge-name-uc2": "bridge1"
+         }
+      },
+      {
+        "name": "lag-uc2-both",
+        "type": "ident:ieee8021axLag",
+        "ident:bridge-port-uc1":
+         {
+             "ident:bridge-name-uc1": "bridge1"
+         },
+        "ident:bridge-port-uc2":
+         {
+             "ident:bridge-name-uc2": "bridge1"
+         }
+      }
+    ]
+  }
+}
